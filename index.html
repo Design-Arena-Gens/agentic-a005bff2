@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trending Print-on-Demand Ideas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <h1>High-Demand, Low-Competition Design Ideas</h1>
+        <p>
+          Curated prompts for T-shirts, mugs, and posters designed to tap into
+          underserved niches on Redbubble and TeePublic right now.
+        </p>
+        <div class="hero__filters">
+          <label class="hero__search" aria-label="Search design ideas">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M21 20.3l-5.8-5.8a6.9 6.9 0 001.5-4.3A7 7 0 109 17a6.9 6.9 0 004.3-1.5l5.8 5.8zm-12-4.6a4.7 4.7 0 114.7-4.7a4.7 4.7 0 01-4.7 4.7z"
+              />
+            </svg>
+            <input type="search" id="search" placeholder="Find by niche, trend, or mood" />
+          </label>
+          <select id="productFilter" aria-label="Filter by product">
+            <option value="all">All Products</option>
+            <option value="tshirt">T-Shirts</option>
+            <option value="mug">Mugs</option>
+            <option value="poster">Posters</option>
+          </select>
+          <select id="seasonFilter" aria-label="Filter by season">
+            <option value="all">All Seasons</option>
+          </select>
+          <select id="trendFilter" aria-label="Filter by trend status">
+            <option value="all">All Trend Stages</option>
+            <option value="emerging">Emerging 🔥</option>
+            <option value="steady">Steady 🧭</option>
+            <option value="evergreen">Evergreen 🌿</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="insights" aria-label="Niche opportunity insights">
+        <article class="insight" id="sweetSpot">
+          <h2>Opportunity Snapshot</h2>
+          <div class="insight__body">
+            <p id="sweetSpotHeadline"></p>
+            <ul id="sweetSpotDetails"></ul>
+          </div>
+        </article>
+        <article class="insight">
+          <h2>How to Stand Out</h2>
+          <div class="insight__body">
+            <p>
+              Pair niche communities with bold illustration styles and keep copy short.
+              Experiment with neon accents or textured retro backgrounds to pop in marketplace thumbnails.
+            </p>
+            <p>
+              Cross-merch: adapt your strongest concept for at least two product types to maximize shelf space and algorithm exposure.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="grid" aria-label="Design idea results" id="results"></section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <div class="card__badge" data-slot="product"></div>
+        <h3 data-slot="title"></h3>
+        <p class="card__subtitle" data-slot="subtitle"></p>
+        <div class="card__metrics">
+          <span class="metric" data-slot="searchVolume"></span>
+          <span class="metric" data-slot="competition"></span>
+          <span class="metric" data-slot="potential"></span>
+        </div>
+        <ul class="card__tags" data-slot="tags"></ul>
+        <p class="card__prompt" data-slot="prompt"></p>
+        <div class="card__notes" data-slot="notes"></div>
+      </article>
+    </template>
+
+    <footer class="footer">
+      <p>
+        Built for fast experimentation — refresh weekly as micro-trends shift.
+      </p>
+    </footer>
+
+    <script src="data.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
